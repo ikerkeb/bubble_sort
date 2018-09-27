@@ -20,24 +20,35 @@ a = [4, 3, 5, 0, 1]
 
 # A:  15 swaps.
 
-def bubble_sort(a)
-  iterations = 0
-  swap = 0
-  loop do
-    swapped = false
-    (a.length - 1).times do |i|
-      if a[i] > a[i + 1]
-        a[i], a[i + 1] = a[i + 1], a[i]
-        swap += 1
-        swapped = true
+class BubbleSort
+
+  def self.sort(a)
+
+    iterations = 0
+    swap = 0
+    loop do
+      swapped = false
+      (a.length - 1).times do |i|
+        if a[i] > a[i + 1]
+          a[i], a[i + 1] = a[i + 1], a[i]
+          swap += 1
+          swapped = true
+        end
+        iterations += 1
       end
-      iterations += 1
+      break if not swapped
     end
-    break if not swapped
+    print_results(a, swap, iterations)
+    a
   end
-  puts "Final result: #{a}"
-  puts "Swaps: #{swap}"
-  puts "Iterations: #{iterations}"
+
+  def self.print_results(a, swap, iterations)
+
+    puts "Final result: #{a}"
+    puts "Swaps: #{swap}"
+    puts "Iterations: #{iterations}"
+  end
+
 end
 
-bubble_sort(a)
+BubbleSort.sort(a)
