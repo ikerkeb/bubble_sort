@@ -1,4 +1,4 @@
-# Execute this program with "ruby bubble_challenge.rb"
+# Execute this program with "ruby bubble_sort.rb"
 # It answers the 3 questions asked in the README.md
 
 # Q:  The example above took 21 iterations to get to a result.
